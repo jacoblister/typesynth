@@ -1,0 +1,11 @@
+callEmptyTest:
+callIntTest:
+2
+callArrTest:
+4
+5
+6
+4
+5
+6
+callReturnNothing:

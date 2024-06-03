@@ -1,0 +1,39 @@
+; (func vecNoAsignTest 
+;   (print "vecNoAsignTest:")
+;   (let items (vec 3 float) (alloc (vec 3 float)))
+;   ; (print (# items)) waxc - error
+;   (print (get items 0))
+;   (print (get items 1))
+;   (print (get items 2))
+; )
+
+(func vecNoAllocTest 
+  (print "vecNoAllocTest:")
+  (let items (vec 3 float))
+  ; (print (get items 0))
+  ; (print (get items 1))
+  ; (print (get items 2))
+)
+
+(func vecAsignTest 
+  (print "vecAsignTest:")
+  (let items (vec 3 float) (alloc (vec 3 float) 1 2 3))
+;   (print (# items)) waxc - error
+  (print (get items 0))
+  (print (get items 1))
+  (print (get items 2))
+)
+
+; 2d vector not supported
+; (func vec2dTest  
+;   (print "vec2dTest:")
+;   (let items (vec 2 (vec 2 float)) (alloc (vec 2 (alloc (vec 2 float)))))
+; )
+
+(func main (result int)
+  ; (call vecNoAsignTest)
+  (call vecNoAllocTest)
+  (call vecAsignTest)
+;   (call vec2dTest)
+  (return 0)
+)

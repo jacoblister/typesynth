@@ -1,0 +1,25 @@
+(func printTest
+  (print "printTest:")
+
+  (print "abc")
+  (print 123)
+  (print 123.4)
+  (print (+ 2 3))
+  (print (+ 10.0 1.1))
+
+  (let value int 999)
+  (print value)
+
+  (let msg str "xyz")
+  (print msg)
+
+  ; (print (get msg 1))
+  (let out str (alloc str ""))
+  (<< out (get msg 1))
+  (print out)
+)
+
+(func main (result int)
+  (call printTest)
+  (return 0)
+)

@@ -1,0 +1,12 @@
+(func show (param ar (map str int))
+    (print (get ar 0))
+    (print (get ar 1))
+)
+
+(func main (result int)
+    (let st (map str int) (alloc map "one" 1 "two" 2 "three" 3))
+    (let st (map str int) (alloc (map str int) "one" 1 "two" 2 "three" 3))
+    (call show (alloc (map str int) "one" 1 "two" 2 "three" 3))
+    (call show (alloc map "one" 1 "two" 2 "three" 3))
+    (return 0)
+)

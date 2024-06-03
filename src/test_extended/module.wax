@@ -1,0 +1,29 @@
+(module geom (export Point)
+    (struct Point
+        (let x int)
+        (let y int)
+        (func length (result int) (return (+ (get this x) (get this y))))
+    )
+    (func testLength
+        (let point (struct Point) (alloc (struct Point)))
+        (let x int (call (get point length)))
+    )
+)
+
+(module calc (export length)
+    (func length (param point (struct (get geom Point))) (result int) (return (+ (get point x) (get point y))))
+    (func testLength
+        (let point (struct (get geom Point)) (alloc (struct (get geom Point))))
+        (let x int (call length point))
+    )
+)
+
+(func main (result int)
+	(print "module:")
+    (let point (struct (get geom Point)) (alloc (struct (get geom Point))))
+    (set point x 2)
+    (set point y 3)
+    (print (call (get point length)))
+    (print (call (get calc length) point))
+	(return 0)
+)

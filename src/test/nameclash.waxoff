@@ -1,0 +1,5 @@
+(struct dummy
+    (let x int)
+)
+
+(let dummy (struct dummy))

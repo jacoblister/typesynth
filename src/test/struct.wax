@@ -1,0 +1,75 @@
+(struct Empty
+  (let dummy int)
+)
+
+(func structEmptyTest
+  (print "structEmptyTest:")
+  (let e (struct Empty) (alloc (struct Empty)))
+)
+
+(struct Point 
+    (let posX float)
+    (let posY float)
+)
+
+(func structSimpleTest
+  (print "structSimpleTest:")
+  (let p (struct Point) (alloc (struct Point)))
+  (set p posX 1.1)
+  (set p posY 1.2)
+  (print (get p posX))
+  (print (get p posY))
+  (free p)
+)
+
+(struct Node 
+    (let name str)
+    (let child (struct Node))
+)
+
+(func structNestedTest
+  (print "structNestedTest:")
+  (let parent (struct Node) (alloc (struct Node)))
+  (set parent name "parent")
+  
+  (let child (struct Node) (alloc (struct Node)))
+  (set child name "child")
+
+  (set parent child child)
+
+  (print (get parent name))
+  (print (get parent child name))
+
+  (free child)
+  (free parent)
+)
+
+(func structComparisonValueTest
+  (print "structComparisonValueTest:")
+  (let a (struct Node) (alloc (struct Node)))
+  (set a name "A")
+  (let b (struct Node) (alloc (struct Node)))
+  (set b name "A")
+  (print (get a name))
+  (print (get b name))
+  (print (cast (= a b) int))
+)
+
+(func structComparisonRefTest
+  (print "structComparisonRefTest:")
+  (let a (struct Node) (alloc (struct Node)))
+  (set a name "A")
+  (let b (struct Node) a)
+  (print (get a name))
+  (print (get b name))
+  (print (cast (= a b) int))
+)
+
+(func main (result int)
+  (call structEmptyTest)
+  (call structSimpleTest)
+  (call structNestedTest)
+  (call structComparisonValueTest)
+  (call structComparisonRefTest)
+  (return 0)
+)

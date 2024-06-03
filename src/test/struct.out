@@ -1,0 +1,15 @@
+structEmptyTest:
+structSimpleTest:
+1.1
+1.2
+structNestedTest:
+parent
+child
+structComparisonValueTest:
+A
+A
+0
+structComparisonRefTest:
+A
+A
+1

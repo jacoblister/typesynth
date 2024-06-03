@@ -1,0 +1,14 @@
+(func equalsTest
+  (print "equalsTest:")
+  (let compare str (alloc str))
+  (<< compare "y")
+  (<< compare "e")
+  (<< compare "s")
+  (let compareResult int (? (= "yes" compare) 1 0))
+  (print compareResult)
+)
+
+(func main (result int)
+  (call equalsTest)
+  (return 0)
+)

@@ -1,0 +1,14 @@
+(func main (result int)
+  (print "empty expression:")
+  ()
+  (
+    (let msg str "blockA")
+    (print msg)
+  )
+  (
+    (let msg str "blockB")
+    (print msg)
+  )
+
+  (return 0)
+)

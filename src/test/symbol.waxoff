@@ -1,0 +1,18 @@
+(struct Node
+    (let value str)
+    (let child (arr (struct Node)))
+)
+
+(func get_node (param node (struct Node)) (param index int)
+    (print (get node child 0))
+)
+
+; (struct Node
+;     (let value str)
+;     (let child (arr (struct Node)))
+; )
+
+; (func get_node (param node (struct Node))
+;     (print (get node child 0))
+; )
+

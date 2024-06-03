@@ -1,0 +1,21 @@
+(struct Rect
+	(let width int)
+    (let height int)
+    (func constructor (param width int) (param height int)
+        (set (get this width) width)
+        (set (get this height) height)
+    )
+
+	(func area (result int)
+        (return (* (get this width) (get this height)))
+    )
+)
+
+(func main (result int)
+    (print "class with method:")
+    (let rect (struct Rect) (alloc (struct Rect) 2 3))
+    ; (set rect width 2)
+    ; (set rect height 3)
+    (print (call (get rect area)))
+ 	(return 0)
+)

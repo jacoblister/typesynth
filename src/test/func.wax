@@ -1,0 +1,64 @@
+; waxc - nothing output 
+; (func funcNoBody
+; )
+
+(func funcEmpty 
+  (print "funcEmpty:")
+)
+
+(func funcResult (result int)
+  (print "funcResult:")
+  (return -1)
+)
+
+(func funcParamA (param a int)
+  (print "funcParamA:")
+  (print a)
+)
+
+(func funcParamABC (param a int) (param b int) (param c int)
+  (print "funcParamABC:")
+  (print a)
+  (print b)
+  (print c)
+)
+
+(func funcParamABCResult (param a int) (param b int) (param c int) (result int)
+  (print "funcParamABCResult:")
+  (print a)
+  (print b)
+  (print c)
+  (return -1)
+)
+
+(func funcStrResult (result str)
+  (print "funcStrResult:")
+  (return "string")
+)
+
+(struct Point 
+    (let posX float)
+    (let posY float)
+)
+
+(func funcStruct (param p (struct Point))
+  (print "funcStruct:")
+  (print (get p posX))
+  (print (get p posY))
+)
+
+(func main (result int)
+    ; (call funcNoBody)
+    (call funcEmpty)
+    (print (call funcResult))
+    (call funcParamA 1)
+    (call funcParamABC 1 2 3)
+    (print (call funcParamABCResult 1 2 3))
+    (print (call funcStrResult))
+
+    (let p (struct Point) (alloc (struct Point)))
+    (set p posX 1.1)
+    (set p posY 2.2)
+    (call funcStruct p)
+    (return 0)
+ )

@@ -1,0 +1,5 @@
+(func main (result int)
+  (let s str "\"a = 1\" next")
+  (print s)
+  (return 0)
+)

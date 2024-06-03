@@ -1,0 +1,16 @@
+(func funcForward (param msg str))
+
+(func funcCall
+  (print "funcEmpty:")
+  (call funcForward "testing")
+)
+
+(func funcForward (param msg str)
+  (print "forward")
+  (print msg)
+)
+
+(func main (result int)
+  (call funcCall)
+  (return 0)
+)

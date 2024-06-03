@@ -1,0 +1,11 @@
+(@define N 8)
+
+(func defineValueTest
+    (print "defineValueTest:")
+    (print @N)
+)
+
+(func main (result int)
+    (call defineValueTest)
+    (return 0)
+ )

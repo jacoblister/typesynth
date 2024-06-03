@@ -1,0 +1,23 @@
+(struct AdderContext
+	(let amount int)
+	(let fn (func (param context (struct AdderContext)) (param x int) (result int)))
+)
+
+(func adder_fn (param context (struct AdderContext)) (param x int) (result int)
+	(return (+ (get context amount) x))
+)
+
+(func make_adder (param amount int) (result (struct AdderContext))
+	(let adder (struct AdderContext) (alloc (struct AdderContext)))
+    (set adder fn adder_fn)
+    (set adder amount amount)
+    (return adder)
+)
+
+(func main (result int)
+    (print "clousure adder:")
+    (let add1 (struct AdderContext) (call make_adder 1))
+    (print (call (get add1 fn) add1 1))
+
+	(return 0)
+)

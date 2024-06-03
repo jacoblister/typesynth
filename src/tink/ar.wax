@@ -1,0 +1,12 @@
+(func show (param ar (arr str))
+    (print (get ar 0))
+    (print (get ar 1))
+)
+
+(func main (result int)
+    (let st (arr str) (alloc arr "4" "5" "6"))
+    (let st (arr str) (alloc (arr str) "4" "5" "6"))
+    (call show (alloc (arr str) "4" "5" "6"))
+    (call show (alloc arr "4" "5" "6"))
+    (return 0)
+)

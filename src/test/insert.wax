@@ -1,0 +1,19 @@
+(func insertTest 
+  (print "insertTest:")
+  (let items (arr float) (alloc (arr float) 5 6 7))
+  (insert items 0 4.0)
+  (insert items 0 3.0)
+  (insert items 0 3.1)
+  (insert items 0 3.2)
+  (insert items 0 1.0)
+  (insert items 1 2.0)
+  (remove items (+ 1 1) (+ 1 1))
+  (for i 0 (< i (# items)) 1 (do
+    (print (get items i))
+  ))
+)
+
+(func main (result int)
+  (call insertTest)
+  (return 0)
+)

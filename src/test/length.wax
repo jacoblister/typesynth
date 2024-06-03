@@ -1,0 +1,16 @@
+(func lengthTest
+  (print "lengthTest:")
+  ; (let vector (vec 3 int) (alloc (vec 3 int) 1 2))
+  ; (print (# vector))
+  (let array (arr int) (alloc (arr int) 1 2 3))
+  (print (# array))
+  (let string str "four")
+  (print (# string))
+  (let allocstring str (alloc str "5five"))
+  (print (# allocstring))
+)
+
+(func main (result int)
+  (call lengthTest)
+  (return 0)
+)

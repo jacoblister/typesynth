@@ -1,0 +1,11 @@
+(func forTest 
+  (print "forTest:")
+  (for i 0 (< i 5) 1 (do
+    (print i)
+  ))
+)
+
+(func main (result int)
+    (call forTest)
+    (return 0)
+ )

@@ -1,0 +1,23 @@
+scalarIntNoAsign:
+scalarIntAsign=-2:
+-2
+scalarFloatNoAsign:
+scalarFloatAsign=-2.2:
+-2.2
+scalarStrNoAsign:
+scalarStrAsign="abc"
+abc
+vecNoAsign # [0] [1] [2]:
+vecEmpty # [0] [1] [2]:
+vecAsign # [0] [1] [2]:
+1
+2
+3
+arrNoAsign #:
+arrEmpty #:
+0
+arrAsign # [0] [1] [2]:
+3
+1
+2
+3

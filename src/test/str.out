@@ -1,0 +1,19 @@
+strNoAsignTest:
+strAsignTest:
+init
+strAllocTest:
+
+strAllocAsignTest:
+init
+strAppendTest:
+init:append
+i2:append
+strAppendIntTest:
+init:
+strQuoteTest:
+quote double contains 'quote single' string
+quote double contains apostrophe's string
+strCharTest:
+match
+strIntShiftOperatorTest:
+256

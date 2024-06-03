@@ -1,0 +1,68 @@
+(func letInt
+  (print "scalarIntNoAsign:")
+  (let scalarIntNoAsign int) 
+
+  (print "scalarIntAsign=-2:")
+  (let scalarIntAsign int -2)
+  (print scalarIntAsign)
+)
+
+(func letFloat
+  (print "scalarFloatNoAsign:")
+  (let scalarFloatNoAsign float) 
+
+  (print "scalarFloatAsign=-2.2:")
+  (let scalarFloatAsign float -2.2)
+  (print scalarFloatAsign)
+)
+
+(func letStr
+  (print "scalarStrNoAsign:")
+  (let scalarStrNoAsign str)
+
+  (print "scalarStrAsign=\"abc\"")
+  (let scalarStrAsign str "abc")
+  (print scalarStrAsign)
+)
+
+(func letVec
+  (let vecNoAsign (vec 3 int))
+  (let vecEmpty (vec 3 int) (alloc (vec 3 int) 0 0 0))
+  (let vecAsign (vec 3 int) (alloc (vec 3 int) 1 2 3))
+
+  (print "vecNoAsign # [0] [1] [2]:")
+
+  (print "vecEmpty # [0] [1] [2]:")
+
+  (print "vecAsign # [0] [1] [2]:")
+  (print (get vecAsign 0))
+  (print (get vecAsign 1))
+  (print (get vecAsign 2))
+)
+
+(func letArr
+  (let arrNoAsign (arr int))
+  (let arrEmpty (arr int) (alloc (arr int)))
+  (let arrAsign (arr int) (alloc (arr int) 1 2 3))
+
+  (print "arrNoAsign #:")
+
+  (print "arrEmpty #:")
+  (print (# arrEmpty))
+
+  (print "arrAsign # [0] [1] [2]:")
+  (print (# arrAsign))
+  (print (get arrAsign 0))
+  (print (get arrAsign 1))
+  (print (get arrAsign 2))
+)
+
+(func main (result int)
+  (call letInt)
+  (call letFloat)
+  (call letStr)
+  (call letVec)
+  (call letArr)
+
+  (return 0)
+)

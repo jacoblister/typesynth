@@ -1,0 +1,78 @@
+(func strAllocTest
+  (print "strNoAsignTest:")
+  (let strNoAlloc str)
+  ; (print strNoAlloc) - results in 'null', or 'undefined' (varies by target)
+
+  (print "strAsignTest:")
+  (let strAsign str "init")
+  (print strAsign)
+
+  (print "strAllocTest:")
+  (let strAlloc str (alloc str))
+  (print strAlloc)
+
+  (print "strAllocAsignTest:")
+  (let strAllocInit str (alloc str "init"))
+  (print strAllocInit)
+)
+
+(func strAppendTest
+  (print "strAppendTest:")
+  (let s str (alloc str "init:"))
+  (<< s "append")
+  (print s)
+  (set s "i2:")
+  (<< s "append")
+  (print s)
+
+  (print "strAppendIntTest:")
+  (let sc str "init:")
+  ; (<< sc 65) - fails to covert to char for JS target
+  (print sc)
+)
+
+(func strQuoteTest
+  (print "strQuoteTest:")
+  (let doubleQuote str "quote double contains 'quote single' string")
+  (print doubleQuote)
+  (let doubleQuoteApostrophe str "quote double contains apostrophe's string")
+  (print doubleQuoteApostrophe)
+)
+
+(func strCharTest
+    (print "strCharTest:")
+    (let string str "()")
+    (let c int (get string 0))
+    ; (print (= c 40)) -  fail JS - boolean not int
+    (if (= c (get "(" 0)) (then (print "match")))
+)
+
+; (func strGetTest
+;     (print "strGetTest:")
+;     (let string str "ABC")
+;     ; (print (get string 1)) - fail JS - not converting to integer
+;     (print (cast (get string 1) int))
+; )
+
+; (func strSliceTest
+;     (print "strSliceTest:")
+;     (let string str "@value")
+;     (print (slice string 1 (- (# string) 1)))
+; )
+
+(func strIntShiftOperatorTest
+  (print "strIntShiftOperatorTest:")
+  (let nonStringOp int (<< 1 8))
+  (print nonStringOp)
+)
+
+(func main (result int)
+  (call strAllocTest)
+  (call strAppendTest)
+  (call strQuoteTest)
+  (call strCharTest)
+  ; (call strGetTest)
+  ; (call strSliceTest)
+  (call strIntShiftOperatorTest)
+  (return 0)
+)

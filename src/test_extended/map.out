@@ -1,0 +1,12 @@
+mapEmptyTest:
+mapSimpleTest:
+123
+mapKeysTest:
+key is
+abc
+val is
+123
+key is
+xyz
+val is
+456

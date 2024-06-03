@@ -1,0 +1,39 @@
+(func callEmptyTest 
+  (print "callEmptyTest:")
+)
+
+(func callIntTest(param x int) (result int)
+  (print "callIntTest:")
+  (return x)
+)
+
+(func callArrTest (param a (arr int)) (result (arr int))
+  (print "callArrTest:")
+  (set a 0 4)
+  (set a 1 5)
+  (set a 2 6)
+  (return a)
+)
+
+(func callReturnNothing
+  (print "callReturnNothing:")
+  (return)
+)
+
+(func main (result int)
+  (call callEmptyTest)
+  (print (call callIntTest 2))
+  
+  (let a (arr int) (alloc (arr int) 1 2 3))
+  (let r (arr int) (call callArrTest a))
+  (print (get a 0))
+  (print (get a 1))
+  (print (get a 2))
+  (print (get r 0))
+  (print (get r 1))
+  (print (get r 2))
+
+  (call callReturnNothing)
+
+  (return 0)
+)

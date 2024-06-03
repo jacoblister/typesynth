@@ -1,0 +1,5 @@
+(func main (param args (arr str)) (result int)
+  (print "main args count:")
+  ; (print (# args))
+  (return 0)
+)
